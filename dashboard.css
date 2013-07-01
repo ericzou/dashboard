@@ -1,0 +1,214 @@
+.widget-subtitle {
+  color: #9596a2;
+  font-size: 13px;
+  text-align: center;
+}
+body {
+  background-color: #43444f;
+}
+nav {
+  color: white;
+  background-color: #43444f;
+}
+.main {
+  padding: 10px;
+  background-color: #31323a;
+}
+.widget--small {
+  background-color: #43444f;
+  height: 200px;
+  margin-bottom: 10px;
+  color: white;
+}
+.widget--long {
+  background-color: #43444f;
+  height: 200px;
+  margin-bottom: 10px;
+  color: white;
+}
+.widget--large {
+  background-color: #43444f;
+  height: 410px;
+  margin-bottom: 10px;
+  color: white;
+}
+.widget__title--number {
+  font-size: 46px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.widget__title--dollar {
+  font-size: 46px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.widget__title--percent {
+  font-size: 46px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 24px;
+}
+.widget__subtitle {
+  color: #9596a2;
+  font-size: 13px;
+  text-align: center;
+}
+.widget__expense {
+  text-align: center;
+  font-size: 13px;
+}
+.widget__expense-subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+.widget__bar--green {
+  background-color: #b2d767;
+  height: 5px;
+}
+.widget__bar--purple {
+  background-color: #e3dafd;
+  height: 5px;
+}
+.widget__bar--gray {
+  background-color: #e2e2e2;
+  height: 5px;
+}
+.widget__bar--blue {
+  background-color: #96cffb;
+  height: 5px;
+}
+.widget__bar--charcol {
+  background-color: #70717f;
+  height: 5px;
+}
+.widget__bar--brown {
+  background-color: #b58676;
+  height: 5px;
+}
+.widget__bar--aqua {
+  background-color: #4acab4;
+  height: 5px;
+}
+.widget__bar--yellow {
+  background-color: #ebd160;
+  height: 5px;
+}
+.widget__progress-bar-text {
+  text-align: left;
+  margin-left: 20px;
+}
+.widget__stat-table {
+  width: 500px;
+  margin: 10px auto;
+}
+.widget__stat-table-header {
+  text-align: center;
+  font-size: 13px;
+  font-weight: normal;
+  color: #aaa;
+}
+.widget__stat-table-cell--aqua {
+  text-align: center;
+  font-size: 18px;
+  color: #4acab4;
+}
+.widget__stat-table-cell--purple {
+  text-align: center;
+  font-size: 18px;
+  color: #878bb6;
+}
+.widget__stat-table-cell--orange {
+  text-align: center;
+  font-size: 18px;
+  color: #ff8153;
+}
+.widget__stat-table-cell--yellow {
+  text-align: center;
+  font-size: 18px;
+  color: #ffea88;
+}
+.widget__progress-bar-text {
+  text-align: center;
+  font-size: 24px;
+  color: #999;
+  margin-bottom: 20px;
+}
+.widget__revenues-number {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 24px;
+  display: inline-block;
+}
+.widget__revenues-text {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+}
+.widget__conversion-number {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 24px;
+  display: inline-block;
+}
+.widget__conversion-text {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+}
+.widget__title--number {
+  font-size: 46px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 62px;
+  font-weight: normal;
+}
+.widget__yearly-change-text {
+  margin-left: 20px;
+  color: #999;
+  font-size: 13px;
+}
+.widget__invoice-chart {
+  height: 50px;
+  width: 149px;
+  margin: 10px auto 0 auto;
+}
+.widget__invoice-chart path {
+  fill: none;
+  stroke: #b2d767;
+  stroke-width: 2px;
+}
+.widget__download-chart {
+  height: 50px;
+  width: 149px;
+  margin: 10px auto 0 auto;
+}
+.widget__download-chart path {
+  fill: none;
+  stroke: #e3dafd;
+  stroke-width: 2px;
+}
+.widget__distribution-chart {
+  height: 280px;
+  width: 280px;
+  margin: 10px auto 0 auto;
+}
+.svg__bar {
+  fill: #54555f;
+}

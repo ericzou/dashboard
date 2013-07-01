@@ -1,0 +1,144 @@
+<head>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="dashboard.css"/>
+  <title>This is a dashboard</title>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <nav class='span2 nav'>
+      <ul class='menu'>
+        <li class="menu__item"><span class="men_item-icon"></span>All services</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Al workflows</li>
+      </ul>
+      <ul class='menu--with-type'>
+        <li class="menu__item-title">MENU</li>
+        <li class="menu__item"><span class="men_item-icon"></span>Dashboard</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Browse files</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Activity</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Sharing files</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Gifts</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Tips</li>
+      </ul>
+
+      <ul class='menu--with-type'>
+        <li class="menu__item-title">MY SERVICES</li>
+        <li class="menu__item"><span class="men_item-icon"></span>DropBox</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Freshbooks</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Github</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Adwords</li>
+        <li class="menu__item"><span class="menu_item-icon"></span>Heroku</li>
+      </ul>
+
+    </nav>
+    <section class="main span10">
+      <div class="row-fluid">
+        <div class="span6">
+          <div class="row-fluid">
+            <div class="span6 widget widget--small">
+              <div class="widget__bar--green"></div>
+              <div class="widget__title--number">14K</div>
+              <div class="widget__subtitle">Invoiced</div>
+              <div class="widget__invoice-chart"></div>
+              <div class="widget__expense">FreshBook</div>
+              <div class="widget__expense-subtitle">Tommy Roussel</div>
+            </div>
+            <div class="span6 widget widget--small">
+              <div class="widget__bar--purple"></div>
+              <div class="widget__title--dollar">$ 904</div>
+              <div class="widget__subtitle">Downloads</div>
+              <div class="widget__download-chart"></div>
+              <div class="widget__expense">T-Mobile</div>
+              <div class="widget__expense-subtitle">Tommy Roussel</div>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6 widget--small">
+              <div class="widget__bar--gray"></div>
+              <div class="widget__title--percent">+18%</div>
+              <div class="widget__progress-bar"></div>
+              <div class="widget__progress-bar-text">$ 200 left</div>
+              <div class="widget__expense">Google Ads</div>
+              <div class="widget__expense-subtitle">Tommy Roussel</div>
+            </div>
+            <div class="span6 widget widget--small">
+              <div class="widget__bar--blue"></div>
+              <div class="widget__dash-meter"></div>
+              <div class="widget__dash-meter-text">65%</div>
+              <div class="widget__expense">Dropbox</div>
+              <div class="widget__expense-subtitle">rousseltommy@gmail.com</div>
+            </div>
+          </div>
+        </div>
+        <div class="span6">
+          <div class="span12 widget--large">
+            <div class="widget__bar--charcol"></div>
+            <div class="widget__distribution-chart"></div>
+            <div class="widget__distribution-chart-text"></div>
+            <table class='widget__stat-table'>
+              <thead>
+              <tr>
+                <th class='widget__stat-table-header'>Heroku</th>
+                <th class='widget__stat-table-header'>MailChimp</th>
+                <th class='widget__stat-table-header'>Github</th>
+                <th class='widget__stat-table-header'>Adwords</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="widget__stat-table-cell--aqua">38%</td>
+                <td class="widget__stat-table-cell--purple">26%</td>
+                <td class="widget__stat-table-cell--orange">17%</td>
+                <td class="widget__stat-table-cell--yellow">9%</td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="widget__expense">Serie Distribution</div>
+            <div class="widget__expense-subtitle">rousseltommy@gmail.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span6 widget--long">
+          <div class="widget__bar--brown"></div>
+
+          <div class='row-fluid'>
+            <div class="span7">
+              <div class="widget__revenues-number">$ 214 000</div>
+              <div class="widget__revenues-text">revenues</div>
+            </div>
+            <div class="span5">
+              <div class="widget__conversion-number">8%</div>
+              <div class="widget__conversion-text">conversion</div>
+            </div>
+          </div>
+          <div class="widget__revenue-chart"></div>
+          <div class="widget__expense">Recurly</div>
+          <div class="widget__expense-subtitle">Tommy Roussel</div>
+        </div>
+        <div class="span3 widget--small">
+          <div class="widget__bar--aqua"></div>
+          <div class="widget__title--number">56</div>
+          <div class="widget__subtitle">files uploaded</div>
+          <div class="widget__progress-bar--aqua"></div>
+          <div class="widget__progress-bar-text">78%</div>
+          <div class="widget__expense">Folder</div>
+          <div class="widget__expense-subtitle">/Work</div>
+        </div>
+        <div class="span3 widget--small">
+          <div class="widget__bar--yellow"></div>
+          <div class="widget__title--percent">-28%</div>
+
+          <div class="widget__yearly-change-chart"></div>
+          <div class="widget__yearly-change-text">Yearly change</div>
+          <div class="widget__expense">Facebook #234532</div>
+          <div class="widget__expense-subtitle">Tommy Roussel</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="dashboard.js"></script>
+</body>
