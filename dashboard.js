@@ -160,6 +160,41 @@
       .attr('width', scale(data))
   }
 
+  Chart.prototype.initArcProgressBar = function (data) {
+    var startAngle = -2.5, endAngle = 2.5, radius = 50;
+    var arc = d3.svg.arc()
+      .outerRadius(radius)
+      .innerRadius(radius - 15)
+
+    var scale = d3.scale.linear()
+      .domain([0, 100]).rangeRound([startAngle, endAngle])
+
+    var pie = d3.layout.pie()
+      .startAngle(-2.5)
+      .endAngle(scale(data))
+
+    function arcTween(data) {
+      var i = d3.interpolate({startAngle: startAngle, endAngle: startAngle}, data)
+      return function (t) {
+        return arc(i(t));
+      }
+    }
+
+    this.svg.append('path')
+      .attr('class', 'arc-progress-bar--background')
+      .attr('d', arc({startAngle: startAngle, endAngle: endAngle}))
+
+    this.svg.append('path')
+      .data(pie([data]))
+      .attr('class', 'arc-progress-bar--foreground')
+      .transition()
+      .duration(700)
+      .attrTween('d', arcTween)
+
+    return this;
+
+  }
+
   function invoiceChart() {
     var dataset = [5, 4, 6, 3, 9, 5, 6, 4]
     var chart = new Chart('.widget__invoice-chart')
@@ -196,7 +231,7 @@
       height: 280,
       margin: { top: 10, right: 10, bottom: 10, left: 10 }
     }).setupSvg({ transform: function (chart) {
-        chart.svg.attr("transform", "translate(" + chart.width / 2 + "," + chart.height / 2 + ")");
+        chart.svg.attr("transform", "translate(" + chart.svgWidth / 2 + "," + chart.svgHeight / 2 + ")");
       }}).initPieChart(dataset)
   }
 
@@ -212,12 +247,27 @@
     }).setupSvg().initProgressBar(dataset)
   }
 
+  function storageChart() {
+    var dataset = 65;
+
+    var chart = new Chart('.widget__storage-chart')
+
+    chart.setupDimension({
+      width: 100,
+      height: 100,
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
+    }).setupSvg({ transform: function (chart) {
+      chart.svg.attr("transform", "translate(" + chart.svgWidth / 2 + "," + chart.svgHeight / 2 + ")");
+    }}).initArcProgressBar(dataset)
+  }
+
 
   window.onload = function () {
     invoiceChart();
     downloadChart();
     distrbutionChart();
     marketingBudgetChart();
+    storageChart();
   }
 
 })()

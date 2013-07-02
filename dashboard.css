@@ -214,10 +214,20 @@ nav {
   margin: 0 auto;
 }
 .widget__marketing-budget-chart .progress-bar--background {
-  fill: #555;
+  fill: #54555f;
 }
 .widget__marketing-budget-chart .progress-bar--foreground {
   fill: #e2e2e2;
+}
+.widget__storage-chart {
+  width: 120;
+  margin: 20px auto 0 auto;
+}
+.widget__storage-chart .arc-progress-bar--background {
+  fill: #54555f;
+}
+.widget__storage-chart .arc-progress-bar--foreground {
+  fill: #96cffb;
 }
 .svg__bar {
   fill: #54555f;
