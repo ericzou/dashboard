@@ -107,7 +107,7 @@
 
     var pie = d3.layout.pie()
       .value(function (d) {
-        return d * 10;
+        return d;
       })
       .sort(null)
 
@@ -115,15 +115,25 @@
       .outerRadius(radius)
       .innerRadius(radius - 45)
 
+    function arcTween(data) {
+      return function (t) {
+        var i = d3.interpolate({ startAngle: 0, endAngle: 0}, data)
+        return arc(i(t));
+      }
+    }
+
     this.svg.selectAll('path')
       .data(pie(dataset))
       .enter().append('path')
       .attr('fill', function (d, i) {
         return color(i);
       })
-      .attr('d', arc)
+      .transition()
+      .duration(700)
+      .attrTween('d', arcTween)
 
     return this;
+
 
   }
 
@@ -163,8 +173,8 @@
       height: 280,
       margin: { top: 10, right: 10, bottom: 10, left: 10 }
     }).setupSvg({ transform: function (chart) {
-      chart.svg.attr("transform", "translate(" + chart.width / 2 + "," + chart.height / 2 + ")");
-    }}).initPieChart(dataset)
+        chart.svg.attr("transform", "translate(" + chart.width / 2 + "," + chart.height / 2 + ")");
+      }}).initPieChart(dataset)
   }
 
 
