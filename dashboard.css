@@ -105,7 +105,7 @@ nav {
   background-color: #ebd160;
   height: 5px;
 }
-.widget__progress-bar-text {
+.widget__marketing-budget-chart-text {
   text-align: left;
   margin-left: 20px;
 }
@@ -139,7 +139,7 @@ nav {
   font-size: 18px;
   color: #ffea88;
 }
-.widget__progress-bar-text {
+.widget__marketing-budget-chart-text {
   text-align: center;
   font-size: 24px;
   color: #999;
@@ -208,6 +208,16 @@ nav {
   height: 280px;
   width: 280px;
   margin: 10px auto 0 auto;
+}
+.widget__marketing-budget-chart {
+  width: 129;
+  margin: 0 auto;
+}
+.widget__marketing-budget-chart .progress-bar--background {
+  fill: #555;
+}
+.widget__marketing-budget-chart .progress-bar--foreground {
+  fill: #e2e2e2;
 }
 .svg__bar {
   fill: #54555f;

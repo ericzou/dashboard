@@ -137,13 +137,36 @@
 
   }
 
+  Chart.prototype.initProgressBar = function (data) {
+
+    var scale = d3.scale.linear()
+      .domain([0, 100]).rangeRound([0, this.width])
+
+    this.svg.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('class', 'progress-bar--background')
+      .attr('height', this.height)
+      .attr('width', this.width)
+
+    this.svg.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('class', 'progress-bar--foreground')
+      .attr('height', this.height)
+      .attr('width', 0)
+      .transition()
+      .duration(700)
+      .attr('width', scale(data))
+  }
+
   function invoiceChart() {
     var dataset = [5, 4, 6, 3, 9, 5, 6, 4]
     var chart = new Chart('.widget__invoice-chart')
 
     chart.setupDimension({
       width: 129,
-      height: 30,
+      height: 35,
       margin: { top: 10, right: 10, bottom: 10, left: 10}
     }).setupSvg().initBarChart(dataset).initLineChart(dataset.map(function (d) {
         return d / 2
@@ -177,11 +200,24 @@
       }}).initPieChart(dataset)
   }
 
+  function marketingBudgetChart() {
+    var dataset = 75;
+
+    var chart = new Chart('.widget__marketing-budget-chart')
+
+    chart.setupDimension({
+      width: 129,
+      height: 15,
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
+    }).setupSvg().initProgressBar(dataset)
+  }
+
 
   window.onload = function () {
     invoiceChart();
     downloadChart();
     distrbutionChart();
+    marketingBudgetChart();
   }
 
 })()
