@@ -229,6 +229,10 @@ nav {
 .widget__storage-chart .arc-progress-bar--foreground {
   fill: #96cffb;
 }
+.widget__revenue-chart {
+  width: 420px;
+  margin: 20px auto 0 auto;
+}
 .svg__bar {
   fill: #54555f;
 }

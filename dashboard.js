@@ -29,8 +29,9 @@
     return this;
   }
 
-  Chart.prototype.initBarChart = function (dataset) {
+  Chart.prototype.initBarChart = function (dataset, config) {
     var self = this;
+
     self.barWidth = 10;
     self.barPadding = 7;
 
@@ -43,10 +44,10 @@
       .attr('x', function (d, i) {
         return i * (self.barWidth + self.barPadding);
       })
+      .attr('width', self.barWidth)
       .attr('y', function (d, i) {
         return self.height
       })
-      .attr('width', self.barWidth)
       .attr('height', 0)
       .transition()
       .duration(700)
@@ -58,6 +59,66 @@
       })
 
     return this;
+  }
+
+  Chart.prototype.initRGBarChart = function (dataset) {
+    function bg(dataset) {
+      var a = []
+      for (var i = 0; i < dataset.length; i++) {
+        a.push(10)
+      }
+      return a
+    }
+
+    function initBars(svg, dataset, selector) {
+
+      return svg.selectAll(selector)
+        .data(dataset)
+        .enter()
+        .append('rect')
+        .attr('class', selector)
+        .attr('x', function (d, i) {
+          return i * (self.barWidth + self.barPadding);
+        })
+        .attr('width', self.barWidth)
+
+    }
+
+    function svgBarColor(d) {
+      return d < 0 ? '#fa5d55' : '#4acab3';
+    }
+
+    var self = this;
+
+    self.barWidth = 16;
+    self.barPadding = 12;
+
+    this.yScale = d3.scale.linear().domain([1, 10]).rangeRound([10, this.height])
+
+    this.bars = initBars(this.svg, bg(dataset), 'svg__bar')
+      .attr('y', function (d) {
+        return self.height - self.yScale(d);
+      })
+      .attr('height', function (d) {
+        return self.yScale(d);
+      })
+
+    initBars(this.svg, dataset, 'svg__red-bar')
+      .attr('fill', svgBarColor)
+      .attr('y', function (d, i) {
+        return self.height
+      })
+      .attr('height', 0)
+      .transition()
+      .duration(700)
+      .attr('y', function (d) {
+        return self.height - self.yScale(Math.abs(d));
+      })
+      .attr('height', function (d) {
+        return self.yScale(Math.abs(d));
+      })
+
+
   }
 
   Chart.prototype.initLineChart = function (dataset) {
@@ -257,8 +318,21 @@
       height: 100,
       margin: { top: 10, right: 10, bottom: 10, left: 10 }
     }).setupSvg({ transform: function (chart) {
-      chart.svg.attr("transform", "translate(" + chart.svgWidth / 2 + "," + chart.svgHeight / 2 + ")");
-    }}).initArcProgressBar(dataset)
+        chart.svg.attr("transform", "translate(" + chart.svgWidth / 2 + "," + chart.svgHeight / 2 + ")");
+      }}).initArcProgressBar(dataset)
+  }
+
+  function revenueChart() {
+    var dataset = [-7, -6, -4, 5, 6, 7, 8, 9, -6, -4, 5, 7, 8, -8, -7]
+
+    var chart = new Chart('.widget__revenue-chart')
+
+    chart.setupDimension({
+      width: 400,
+      height: 65,
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
+    }).setupSvg().initRGBarChart(dataset)
+
   }
 
 
@@ -268,6 +342,7 @@
     distrbutionChart();
     marketingBudgetChart();
     storageChart();
+    revenueChart();
   }
 
 })()
