@@ -44,6 +44,17 @@
   stroke-width: 2px;
 }
 
+.progress-bar(@width, @background, @foreground) {
+  width: @width;
+  margin: 0 auto;
+  .progress-bar--background {
+    fill: @background;
+  }
+  .progress-bar--foreground {
+    fill: @foreground;
+  }
+}
+
 .widget-subtitle {
   color: #9596a2;
   font-size: 13px;
@@ -235,14 +246,7 @@ nav {
 }
 
 .widget__marketing-budget-chart {
-  width: 129;
-  margin: 0 auto;
-  .progress-bar--background {
-    fill: #54555f;
-  }
-  .progress-bar--foreground {
-    fill: #e2e2e2;
-  }
+  .progress-bar(129, #54555f, #e2e2e2);
 }
 
 .widget__storage-chart {
@@ -256,12 +260,19 @@ nav {
   }
 }
 
-
 .widget__revenue-chart {
   width: 420px;
   margin: 20px auto 0 auto;
 }
 
+.widget__yearly-change-chart {
+  width: 186px;
+  margin: 20px auto 0 auto;
+}
+
+.widget__file-uploaded-chart {
+  .progress-bar(129, #54555f, #4acab4);
+}
 
 .svg__bar {
   fill: #54555f;

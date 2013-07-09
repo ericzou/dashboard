@@ -61,7 +61,7 @@
     return this;
   }
 
-  Chart.prototype.initRGBarChart = function (dataset) {
+  Chart.prototype.initRGBarChart = function (dataset, config) {
     function bg(dataset) {
       var a = []
       for (var i = 0; i < dataset.length; i++) {
@@ -89,9 +89,10 @@
     }
 
     var self = this;
+    var config = config || {}
 
-    self.barWidth = 16;
-    self.barPadding = 12;
+    self.barWidth = config.barWidth || 16;
+    self.barPadding = config.barPadding || 12;
 
     this.yScale = d3.scale.linear().domain([1, 10]).rangeRound([10, this.height])
 
@@ -335,6 +336,30 @@
 
   }
 
+  function fileUploadedChart() {
+    var dataset = 78;
+
+    var chart = new Chart('.widget__file-uploaded-chart')
+
+    chart.setupDimension({
+      width: 129,
+      height: 15,
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
+    }).setupSvg().initProgressBar(dataset)
+  }
+
+  function yearlyChangeChart() {
+    var dataset = [6, 7, -9, -1, -4, 10, 7, 2]
+
+    var chart = new Chart('.widget__yearly-change-chart')
+
+    chart.setupDimension({
+      width: 166,
+      height: 50,
+      margin: { top: 10, right: 10, bottom: 10, left: 10 }
+    }).setupSvg().initRGBarChart(dataset, { barWidth: 12, barPadding: 10})
+  }
+
 
   window.onload = function () {
     invoiceChart();
@@ -343,6 +368,8 @@
     marketingBudgetChart();
     storageChart();
     revenueChart();
+    fileUploadedChart();
+    yearlyChangeChart();
   }
 
 })()

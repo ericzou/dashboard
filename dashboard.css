@@ -233,6 +233,20 @@ nav {
   width: 420px;
   margin: 20px auto 0 auto;
 }
+.widget__yearly-change-chart {
+  width: 186px;
+  margin: 20px auto 0 auto;
+}
+.widget__file-uploaded-chart {
+  width: 129;
+  margin: 0 auto;
+}
+.widget__file-uploaded-chart .progress-bar--background {
+  fill: #54555f;
+}
+.widget__file-uploaded-chart .progress-bar--foreground {
+  fill: #4acab4;
+}
 .svg__bar {
   fill: #54555f;
 }
