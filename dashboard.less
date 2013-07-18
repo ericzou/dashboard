@@ -5,28 +5,27 @@
   height: @height;
   margin-bottom: 10px;
   color: white;
+  display: -webkit-flex;
+  -webkit-flex-flow: column;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  padding-bottom: 10px;
 }
 
 .widget-bar (@color) {
   background-color: @color;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 
 .widget-bar-chart () {
-  height: 50px;
-  width: 149px;
-  margin: 10px auto 0 auto;
 }
 
 .widget-pie-chart () {
-  height: 280px;
-  width: 280px;
-  margin: 10px auto 0 auto;
 }
 
 .widget-title () {
   font-size: 46px;
-  text-align: center;
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -45,8 +44,6 @@
 }
 
 .progress-bar(@width, @background, @foreground) {
-  width: @width;
-  margin: 0 auto;
   .progress-bar--background {
     fill: @background;
   }
@@ -58,7 +55,6 @@
 .widget-subtitle {
   color: #9596a2;
   font-size: 13px;
-  text-align: center;
 }
 
 body {
@@ -97,7 +93,7 @@ nav {
 
 .widget__title--percent {
   .widget-title();
-  text-align: left;
+  -webkit-align-self: flex-start;
   margin-left: 20px;
   font-size: 24px;
 }
@@ -107,12 +103,10 @@ nav {
 }
 
 .widget__expense {
-  text-align: center;
   font-size: 13px;
 }
 
 .widget__expense-subtitle {
-  text-align: center;
   color: #999;
   font-size: 12px;
 }
@@ -150,13 +144,11 @@ nav {
 }
 
 .widget__marketing-budget-chart-text {
-  text-align: left;
-  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .widget__stat-table {
   width: 500px;
-  margin: 10px auto;
 }
 
 .widget__stat-table-header {
@@ -187,7 +179,6 @@ nav {
 }
 
 .widget__marketing-budget-chart-text {
-  text-align: center;
   font-size: 24px;
   color: #999;
   margin-bottom: 20px;
@@ -250,8 +241,7 @@ nav {
 }
 
 .widget__storage-chart {
-  width: 120;
-  margin: 20px auto 0 auto;
+  margin-top: 20px;
   .arc-progress-bar--background {
     fill: #54555f;
   }
@@ -261,13 +251,10 @@ nav {
 }
 
 .widget__revenue-chart {
-  width: 420px;
-  margin: 20px auto 0 auto;
+  margin-top: 20px;
 }
 
 .widget__yearly-change-chart {
-  width: 186px;
-  margin: 20px auto 0 auto;
 }
 
 .widget__file-uploaded-chart {

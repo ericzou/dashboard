@@ -1,7 +1,6 @@
 .widget-subtitle {
   color: #9596a2;
   font-size: 13px;
-  text-align: center;
 }
 body {
   background-color: #43444f;
@@ -19,22 +18,36 @@ nav {
   height: 200px;
   margin-bottom: 10px;
   color: white;
+  display: -webkit-flex;
+  -webkit-flex-flow: column;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  padding-bottom: 10px;
 }
 .widget--long {
   background-color: #43444f;
   height: 200px;
   margin-bottom: 10px;
   color: white;
+  display: -webkit-flex;
+  -webkit-flex-flow: column;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  padding-bottom: 10px;
 }
 .widget--large {
   background-color: #43444f;
   height: 410px;
   margin-bottom: 10px;
   color: white;
+  display: -webkit-flex;
+  -webkit-flex-flow: column;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  padding-bottom: 10px;
 }
 .widget__title--number {
   font-size: 46px;
-  text-align: center;
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -42,7 +55,6 @@ nav {
 }
 .widget__title--dollar {
   font-size: 46px;
-  text-align: center;
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -50,68 +62,70 @@ nav {
 }
 .widget__title--percent {
   font-size: 46px;
-  text-align: center;
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 20px;
   font-weight: bold;
-  text-align: left;
+  -webkit-align-self: flex-start;
   margin-left: 20px;
   font-size: 24px;
 }
 .widget__subtitle {
   color: #9596a2;
   font-size: 13px;
-  text-align: center;
 }
 .widget__expense {
-  text-align: center;
   font-size: 13px;
 }
 .widget__expense-subtitle {
-  text-align: center;
   color: #999;
   font-size: 12px;
 }
 .widget__bar--green {
   background-color: #b2d767;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--purple {
   background-color: #e3dafd;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--gray {
   background-color: #e2e2e2;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--blue {
   background-color: #96cffb;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--charcol {
   background-color: #70717f;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--brown {
   background-color: #b58676;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--aqua {
   background-color: #4acab4;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__bar--yellow {
   background-color: #ebd160;
   height: 5px;
+  -webkit-align-self: stretch;
 }
 .widget__marketing-budget-chart-text {
-  text-align: left;
-  margin-left: 20px;
+  margin-top: 10px;
 }
 .widget__stat-table {
   width: 500px;
-  margin: 10px auto;
 }
 .widget__stat-table-header {
   text-align: center;
@@ -140,7 +154,6 @@ nav {
   color: #ffea88;
 }
 .widget__marketing-budget-chart-text {
-  text-align: center;
   font-size: 24px;
   color: #999;
   margin-bottom: 20px;
@@ -171,7 +184,6 @@ nav {
 }
 .widget__title--number {
   font-size: 46px;
-  text-align: center;
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -184,34 +196,15 @@ nav {
   color: #999;
   font-size: 13px;
 }
-.widget__invoice-chart {
-  height: 50px;
-  width: 149px;
-  margin: 10px auto 0 auto;
-}
 .widget__invoice-chart path {
   fill: none;
   stroke: #b2d767;
   stroke-width: 2px;
 }
-.widget__download-chart {
-  height: 50px;
-  width: 149px;
-  margin: 10px auto 0 auto;
-}
 .widget__download-chart path {
   fill: none;
   stroke: #e3dafd;
   stroke-width: 2px;
-}
-.widget__distribution-chart {
-  height: 280px;
-  width: 280px;
-  margin: 10px auto 0 auto;
-}
-.widget__marketing-budget-chart {
-  width: 129;
-  margin: 0 auto;
 }
 .widget__marketing-budget-chart .progress-bar--background {
   fill: #54555f;
@@ -220,8 +213,7 @@ nav {
   fill: #e2e2e2;
 }
 .widget__storage-chart {
-  width: 120;
-  margin: 20px auto 0 auto;
+  margin-top: 20px;
 }
 .widget__storage-chart .arc-progress-bar--background {
   fill: #54555f;
@@ -230,16 +222,7 @@ nav {
   fill: #96cffb;
 }
 .widget__revenue-chart {
-  width: 420px;
-  margin: 20px auto 0 auto;
-}
-.widget__yearly-change-chart {
-  width: 186px;
-  margin: 20px auto 0 auto;
-}
-.widget__file-uploaded-chart {
-  width: 129;
-  margin: 0 auto;
+  margin-top: 20px;
 }
 .widget__file-uploaded-chart .progress-bar--background {
   fill: #54555f;
