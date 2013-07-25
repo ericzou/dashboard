@@ -1,7 +1,3 @@
-.widget-subtitle {
-  color: #9596a2;
-  font-size: 13px;
-}
 html {
   height: 100%;
 }
@@ -58,31 +54,20 @@ nav {
 }
 .widget__title--number {
   font-size: 46px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-weight: bold;
 }
 .widget__title--dollar {
   font-size: 46px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-weight: bold;
-}
-.widget__title--percent {
-  font-size: 46px;
-  letter-spacing: 2px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  -webkit-align-self: flex-start;
-  margin-left: 20px;
-  font-size: 24px;
 }
 .widget__subtitle {
   color: #9596a2;
   font-size: 13px;
+  margin-bottom: 15px;
 }
 .widget__expense {
   font-size: 13px;
@@ -131,11 +116,40 @@ nav {
   height: 5px;
   -webkit-align-self: stretch;
 }
-.widget__marketing-budget-chart-text {
-  margin-top: 10px;
+.widget__title--small-number {
+  font-size: 46px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.widget__title--number {
+  font-size: 46px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 62px;
+  font-weight: normal;
+}
+.widget__invoice-chart path {
+  fill: none;
+  stroke: #b2d767;
+  stroke-width: 2px;
+}
+.widget__download-chart path {
+  fill: none;
+  stroke: #e3dafd;
+  stroke-width: 2px;
+}
+.widget__distribution-chart {
+  margin: 10px 0 0 0;
+}
+.widget__distribution-chart-text {
+  position: relative;
+  font-size: 62px;
+  top: -155px;
 }
 .widget__stat-table {
-  width: 500px;
+  width: 400px;
 }
 .widget__stat-table-header {
   text-align: center;
@@ -163,64 +177,35 @@ nav {
   font-size: 18px;
   color: #ffea88;
 }
-.widget__marketing-budget-chart-text {
-  font-size: 24px;
-  color: #999;
-  margin-bottom: 20px;
-}
-.widget__revenues-number {
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 24px;
-  display: inline-block;
-}
-.widget__revenues-text {
-  margin-left: 10px;
+.widget__distribution-name {
+  margin-top: 10px;
   font-size: 13px;
+}
+.widget__distribution-email {
   color: #999;
-  display: inline-block;
+  font-size: 12px;
 }
-.widget__conversion-number {
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 24px;
-  display: inline-block;
-}
-.widget__conversion-text {
-  margin-left: 10px;
-  font-size: 13px;
-  color: #999;
-  display: inline-block;
-}
-.widget__title--number {
+.widget__market-budget-title {
   font-size: 46px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-weight: bold;
-  font-size: 62px;
-  font-weight: normal;
-}
-.widget__yearly-change-text {
-  margin-left: 20px;
-  color: #999;
-  font-size: 13px;
-}
-.widget__invoice-chart path {
-  fill: none;
-  stroke: #b2d767;
-  stroke-width: 2px;
-}
-.widget__download-chart path {
-  fill: none;
-  stroke: #e3dafd;
-  stroke-width: 2px;
+  -webkit-align-self: flex-start;
+  margin: 30px 0 10px 45px;
+  font-size: 24px;
 }
 .widget__marketing-budget-chart .progress-bar--background {
   fill: #54555f;
 }
 .widget__marketing-budget-chart .progress-bar--foreground {
   fill: #e2e2e2;
+}
+.widget__marketing-budget-chart-text {
+  color: #9596a2;
+  font-size: 13px;
+  margin-bottom: 15px;
+  margin: 15px 0;
+  font-size: 18px;
 }
 .widget__storage-chart {
   margin-top: 20px;
@@ -231,14 +216,89 @@ nav {
 .widget__storage-chart .arc-progress-bar--foreground {
   fill: #96cffb;
 }
+.widget__storage-chart-text {
+  position: relative;
+  top: -67px;
+  font-size: 24px;
+}
+.widget__storage-name {
+  font-size: 13px;
+  position: relative;
+  top: -11px;
+}
+.widget__storage-email {
+  color: #999;
+  font-size: 12px;
+  position: relative;
+  top: -11px;
+}
 .widget__revenue-chart {
   margin-top: 20px;
+}
+.widget__revenues-number {
+  margin-top: 20px;
+  font-size: 24px;
+  display: inline-block;
+}
+.widget__revenues-text {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+}
+.widget__conversion-number {
+  margin-top: 20px;
+  font-size: 24px;
+  display: inline-block;
+}
+.widget__file-uploaded-subtitle {
+  color: #9596a2;
+  font-size: 13px;
+  margin-bottom: 15px;
+  margin: 10px 0 0 0;
 }
 .widget__file-uploaded-chart .progress-bar--background {
   fill: #54555f;
 }
 .widget__file-uploaded-chart .progress-bar--foreground {
   fill: #4acab4;
+}
+.widget__file-uploaded-name {
+  font-size: 13px;
+  margin-top: 14px;
+}
+.widget__file-uploaded-folder {
+  color: #999;
+  font-size: 12px;
+}
+.widget__conversion-text {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+}
+.widget__yearly-title {
+  font-size: 46px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  -webkit-align-self: flex-start;
+  margin: 20px 0 10px 30px;
+  font-size: 24px;
+}
+.widget__yearly-change-text {
+  -webkit-align-self: flex-start;
+  margin-left: 30px;
+  color: #999;
+  font-size: 11px;
+}
+.widget__yearly-name {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.widget__yearly-user {
+  color: #999;
+  font-size: 12px;
 }
 .svg__bar {
   fill: #54555f;

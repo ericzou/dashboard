@@ -1,5 +1,4 @@
 // mixins
-
 .widget (@height) {
   background-color: #43444f;
   height: @height;
@@ -18,18 +17,11 @@
   -webkit-align-self: stretch;
 }
 
-.widget-bar-chart () {
-}
-
-.widget-pie-chart () {
-}
-
 .widget-title () {
   font-size: 46px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-weight: bold;
 }
 
 .widget-stat-table-cell () {
@@ -52,17 +44,27 @@
   }
 }
 
-.widget-subtitle {
+.widget-subtitle() {
   color: #9596a2;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.widget-info-main() {
   font-size: 13px;
 }
 
+.widget-info-sub() {
+  color: #999;
+  font-size: 12px;
+}
+
+// dashboard
 html {
   height: 100%;
 }
 
 body {
-//  background-color: #43444f;
   background-color: indianred;
   height: 100%;
 }
@@ -105,24 +107,16 @@ nav {
   .widget-title();
 }
 
-.widget__title--percent {
-  .widget-title();
-  -webkit-align-self: flex-start;
-  margin-left: 20px;
-  font-size: 24px;
-}
-
 .widget__subtitle {
   .widget-subtitle();
 }
 
 .widget__expense {
-  font-size: 13px;
+  .widget-info-main();
 }
 
 .widget__expense-subtitle {
-  color: #999;
-  font-size: 12px;
+  .widget-info-sub();
 }
 
 .widget__bar--green {
@@ -157,12 +151,43 @@ nav {
   .widget-bar(#ebd160);
 }
 
-.widget__marketing-budget-chart-text {
-  margin-top: 10px;
+.widget__title--small-number {
+  .widget-title;
+}
+.widget__title--number {
+  .widget-title;
+  font-size: 62px;
+  font-weight: normal;
+}
+
+
+// invoice chart
+.widget__invoice-chart {
+  path {
+    .widget__line(#b2d767);
+  }
+}
+
+// download chart
+.widget__download-chart {
+  path {
+    .widget__line(#e3dafd)
+  }
+}
+
+// distribution chart
+.widget__distribution-chart {
+  margin: 10px 0 0 0;
+}
+
+.widget__distribution-chart-text {
+  position: relative;
+  font-size: 62px;
+  top: -155px;
 }
 
 .widget__stat-table {
-  width: 500px;
+  width: 400px;
 }
 
 .widget__stat-table-header {
@@ -192,68 +217,34 @@ nav {
   color: #ffea88;
 }
 
-.widget__marketing-budget-chart-text {
+.widget__distribution-name {
+  margin-top: 10px;
+  .widget-info-main();
+}
+
+.widget__distribution-email {
+  .widget-info-sub();
+}
+
+// marketing chart
+.widget__market-budget-title{
+  .widget-title();
+  -webkit-align-self: flex-start;
+  margin: 30px 0 10px 45px;
   font-size: 24px;
-  color: #999;
-  margin-bottom: 20px;
-}
-
-.widget__revenues-number {
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 24px;
-  display: inline-block;
-}
-
-.widget__revenues-text {
-  margin-left: 10px;
-  font-size: 13px;
-  color: #999;
-  display: inline-block;
-}
-
-.widget__conversion-number {
-  .widget__revenues-number();
-}
-
-.widget__conversion-text {
-  .widget__revenues-text;
-}
-
-.widget__title--number {
-  .widget-title;
-  font-size: 62px;
-  font-weight: normal;
-}
-
-.widget__yearly-change-text {
-  margin-left: 20px;
-  color: #999;
-  font-size: 13px;
-}
-
-.widget__invoice-chart {
-  .widget-bar-chart();
-  path {
-    .widget__line(#b2d767);
-  }
-}
-
-.widget__download-chart {
-  .widget-bar-chart();
-  path {
-    .widget__line(#e3dafd)
-  }
-}
-
-.widget__distribution-chart {
-  .widget-pie-chart();
 }
 
 .widget__marketing-budget-chart {
   .progress-bar(129, #54555f, #e2e2e2);
 }
 
+.widget__marketing-budget-chart-text {
+  .widget-subtitle();
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+// storage chart
 .widget__storage-chart {
   margin-top: 20px;
   .arc-progress-bar--background {
@@ -264,15 +255,90 @@ nav {
   }
 }
 
+.widget__storage-chart-text {
+  position: relative;
+  top: -67px;
+  font-size: 24px;
+}
+
+.widget__storage-name {
+  .widget-info-main();
+  position: relative;
+  top: -11px;
+}
+.widget__storage-email {
+  .widget-info-sub();
+  position: relative;
+  top: -11px;
+}
+
+// revenue chart
 .widget__revenue-chart {
   margin-top: 20px;
 }
 
-.widget__yearly-change-chart {
+.widget__revenues-number {
+  margin-top: 20px;
+  font-size: 24px;
+  display: inline-block;
+}
+
+.widget__revenues-text {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+}
+
+.widget__conversion-number {
+  .widget__revenues-number();
+}
+
+// file uploaded chart
+.widget__file-uploaded-subtitle {
+  .widget-subtitle();
+  margin: 10px 0 0 0;
 }
 
 .widget__file-uploaded-chart {
   .progress-bar(129, #54555f, #4acab4);
+}
+
+.widget__file-uploaded-name {
+  .widget-info-main();
+  margin-top: 14px;
+}
+
+.widget__file-uploaded-folder{
+  .widget-info-sub();
+}
+
+.widget__conversion-text {
+  .widget__revenues-text;
+}
+
+// yearly chart
+.widget__yearly-title {
+  .widget-title();
+  -webkit-align-self: flex-start;
+  margin: 20px 0 10px 30px;
+  font-size: 24px;
+}
+
+.widget__yearly-change-text {
+  -webkit-align-self: flex-start;
+  margin-left: 30px;
+  color: #999;
+  font-size: 11px;
+}
+
+.widget__yearly-name {
+  .widget-info-main();
+  margin-top: 10px;
+}
+
+.widget__yearly-user {
+  .widget-info-sub();
 }
 
 .svg__bar {

@@ -160,7 +160,7 @@
 
   Chart.prototype.initPieChart = function (dataset) {
 
-    var radius = 140;
+    var radius = 135;
 
     var color = function (i) {
       var colors = ['#4acab4', '#878bb6', '#ff8153', '#ffea88']
@@ -289,8 +289,8 @@
     var chart = new Chart('.widget__distribution-chart')
 
     chart.setupDimension({
-      width: 280,
-      height: 280,
+      width: 270,
+      height: 270,
       margin: { top: 10, right: 10, bottom: 10, left: 10 }
     }).setupSvg({ transform: function (chart) {
         chart.svg.attr("transform", "translate(" + chart.svgWidth / 2 + "," + chart.svgHeight / 2 + ")");
