@@ -1,20 +1,21 @@
+@import "flexbox";
+
 // mixins
 .widget (@height) {
   background-color: #43444f;
   height: @height;
   margin-bottom: 10px;
   color: white;
-  display: -webkit-flex;
-  -webkit-flex-flow: column;
-  -webkit-justify-content: flex-start;
-  -webkit-align-items: center;
+  .flex-display();
+  .flex-direction(column);
+  .align-items(center);
   padding-bottom: 10px;
 }
 
 .widget-bar (@color) {
   background-color: @color;
   height: 5px;
-  -webkit-align-self: stretch;
+  .align-self(stretch);
 }
 
 .widget-title () {
@@ -70,8 +71,8 @@ body {
 }
 
 .container {
-  display: -webkit-flex;
-  -webkit-align-items: center;
+  .flex-display();
+  .align-items(center);
   height: 100%;
 }
 
@@ -160,7 +161,6 @@ nav {
   font-weight: normal;
 }
 
-
 // invoice chart
 .widget__invoice-chart {
   path {
@@ -229,7 +229,7 @@ nav {
 // marketing chart
 .widget__market-budget-title{
   .widget-title();
-  -webkit-align-self: flex-start;
+  .align-self(flex-start);
   margin: 30px 0 10px 45px;
   font-size: 24px;
 }
@@ -320,13 +320,13 @@ nav {
 // yearly chart
 .widget__yearly-title {
   .widget-title();
-  -webkit-align-self: flex-start;
+  .align-self(flex-start);
   margin: 20px 0 10px 30px;
   font-size: 24px;
 }
 
 .widget__yearly-change-text {
-  -webkit-align-self: flex-start;
+  .align-self(flex-start);
   margin-left: 30px;
   color: #999;
   font-size: 11px;
